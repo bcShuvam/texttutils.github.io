@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="icon" href="http://example.com/favicon.png">
+    <title>Template is Working</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-3">Welcome to the text analyzer . Enter the text below : </h1>
+        <form action='/analyze' method="post"> {% csrf_token %}
+            <div class="row">
+                <textarea class="col-12" style="height: 150px;" name="text"></textarea>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="remove" name="removepunc">
+                <label class="custom-control-label" for="remove">Remove punctuations</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="capitalize" name="fullcaps">
+                <label class="custom-control-label" for="capitalize">UpperCase</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="nremove" name="newlineremover">
+                <label class="custom-control-label" for="nremove">Remove newlines</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="spaceR" name="extraspaceremover">
+                <label class="custom-control-label" for="spaceR">Extra Space Remover</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="charC" name="charcount">
+                <label class="custom-control-label" for="charC">Count Character</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Analyze Text</button>
+        </form>
+    </div>
+</body>
+</html>
